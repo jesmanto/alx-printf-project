@@ -9,6 +9,8 @@ void _printstr(const char *s, int *cp)
 {
 	int s_len = 0;
 
+	if (!s)
+		s = "(nil)";
 	while (s[s_len] != '\0')
 	{
 		s_len++;

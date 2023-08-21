@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 	char *s = "";
 	int *pt = &count;
 
+	if (!format)
+		return (-1);
 	va_start(args, format);
 	while (format[i])
 	{
