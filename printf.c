@@ -10,8 +10,6 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0, i = 0;
-	char c;
-	char *s = "";
 	int *pt = &count;
 
 	if (!format)
@@ -20,27 +18,20 @@ int _printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] != '%')
-		{
 			_printchar(format[i], pt);
-		}
 		else
 		{
 			i++;
 			if (format[i] == '%')
-			{
-				c = '%';
-				_printchar(c, pt);
-			}
+				_printchar('%', pt);
 			else if (format[i] == 's')
-			{
-				s = va_arg(args, char *);
-				_printstr(s, pt);
-			}
+				_printstr((va_arg(args, char *)), pt);
 			else if (format[i] == 'c')
-			{
-				c = va_arg(args, int);
-				_printchar(c, pt);
-			}
+				_printchar((va_arg(args, int)), pt);
+			else if (format[i] == 'd')
+				count += printd((va_arg(args, int)));
+			else if (format[i] == 'i')
+				count += printd((va_arg(args, int)));
 		}
 		i++;
 	}
