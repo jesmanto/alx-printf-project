@@ -29,9 +29,9 @@ int _printf(const char *format, ...)
 			else if (format[i] == 'c')
 				_printchar((va_arg(args, int)), pt);
 			else if (format[i] == 'd')
-				count += printd((va_arg(args, int)));
+				count += print_d((long)(va_arg(args, int)), 10);
 			else if (format[i] == 'i')
-				count += printd((va_arg(args, int)));
+				count += print_d((long)(va_arg(args, int)), 10);
 		}
 		i++;
 	}

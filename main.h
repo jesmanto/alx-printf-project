@@ -7,7 +7,7 @@ int _printf(const char *format, ...);
 void _printchar(char c, int *cp);
 void _printstr(const char *s, int *cp);
 int _print(const char specifier, va_list args);
-int print_int(int n);
+int print_d(long n, int base);
 int printd(int n);
 char *numtostr(int n, char * str, int base);
 char *reverse(char *s, int len);
