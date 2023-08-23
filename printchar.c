@@ -4,7 +4,7 @@
 /**
  * _printchar - function that writes a char to io
  * @c: character to write
- * @cp: count pointer
+ * Return: integer
  */
 void _printchar(char c, int *cp)
 {
